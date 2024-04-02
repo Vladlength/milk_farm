@@ -1,12 +1,13 @@
 package org.example.milk_farm;
 
 public class Const {
+    public static final String OPT_TABLE = "options";
+    public static final String OPT_VOLUME = "volume";
+    public static final String OPT_KIND = "animal_kind";
+    public static final String OPT_NUM = "animal_num";
+    public static final String OPT_PERS = "personalNumber";
+    public static final String OPT_DATE = "date";
 
-    public static final String USER_TABLE = "users";
-
-    public static final String USERS_ID = "id_user";
-    public static final String USERS_NAME = "name";
-    public static final String USERS_SURNAME = "surname";
-    public static final String USERS_PERS_NUM = "personal_number";
-    public static final String USERS_PASSWORD = "password";
 }
+
+

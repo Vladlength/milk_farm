@@ -22,22 +22,25 @@ public class DatabaseHandler extends Configs {
         return dbConnection;
     }
 
-    public void signUpUser(User user) {
-        String insert = "INSERT INTO " + Const.USER_TABLE + "(" +
-                Const.USERS_NAME + "," + Const.USERS_SURNAME + "," +
-                Const.USERS_PERS_NUM + "," + Const.USERS_PASSWORD + ")" +
-                "VALUES(?,?,?,?)";
+    public void SendOptions(Options options) {
+        String insert = "INSERT INTO " + Const.OPT_TABLE + "(" +
+                Const.OPT_VOLUME + "," + Const.OPT_KIND + "," +
+                Const.OPT_NUM + "," + Const.OPT_PERS + "," +
+                Const.OPT_DATE + ")" +
+                "VALUES(?,?,?,?,?)";
 
 
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
-            prSt.setString(1, user.getFirstName());
-            prSt.setString(2, user.getSecondName());
-            prSt.setInt(3, user.getPersonalNumber());
-            prSt.setString(4, user.getPassword());
+            prSt.setDouble(1, options.getVolume());
+            prSt.setString(2, options.getAnimal_kind());
+            prSt.setDouble(3, options.getAnimal_num());
+            prSt.setInt(4, options.getPersonalNumber());
+            prSt.setString(5, options.getDate());
 
             prSt.executeUpdate();
 
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
@@ -47,28 +50,28 @@ public class DatabaseHandler extends Configs {
 
     }
 
-    public ResultSet getUser(User user) {
-        ResultSet resSet = null;
-
-        String select = "SELECT * FROM " + Const.USER_TABLE +
-                "WHERE " + Const.USERS_PERS_NUM + "=? AND " +
-                Const.USERS_PASSWORD + "=?";
-
-        try {
-            PreparedStatement prSt = getDbConnection().prepareStatement(select);
-            prSt.setInt(1, user.getPersonalNumber());
-            prSt.setString(2, user.getPassword());
-
-            resSet = prSt.executeQuery();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-
-        }
-        return resSet;
-    }
+//    public ResultSet getUser(Options user) {
+//        ResultSet resSet = null;
+//
+//        String select = "SELECT * FROM " + Const.USER_TABLE +
+//                "WHERE " + Const.USERS_PERS_NUM + "=? AND " +
+//                Const.USERS_PASSWORD + "=?";
+//
+//        try {
+//            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+//            prSt.setInt(1, user.getPersonalNumber());
+//            prSt.setString(2, user.getPassword());
+//
+//            resSet = prSt.executeQuery();
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        } catch (ClassNotFoundException e) {
+//            throw new RuntimeException(e);
+//
+//        }
+//        return resSet;
+//    }
 }
 
 
