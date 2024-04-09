@@ -7,7 +7,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class HomeController {
+public class SuccessController {
 
     @FXML
     private ResourceBundle resources;

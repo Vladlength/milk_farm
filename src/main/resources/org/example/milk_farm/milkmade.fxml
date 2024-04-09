@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.milk_farm.HelloController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.milk_farm.MilkmadeController">
   <padding>
     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
   </padding>
@@ -44,12 +44,13 @@
                      </font>
                   </TextField>
                   <CheckBox fx:id="goat" layoutX="340.0" layoutY="70.0" mnemonicParsing="false" text="коза" />
-                  <CheckBox fx:id="cow" layoutX="420.0" layoutY="71.0" mnemonicParsing="false" selected="true" text="корова" />
+                  <CheckBox fx:id="cow" layoutX="420.0" layoutY="71.0" mnemonicParsing="false" text="корова" />
                   <Label layoutX="179.0" layoutY="61.0" prefHeight="36.0" prefWidth="164.0" text="вид животного:" textFill="#1c16167c">
                      <font>
                         <Font name="Sitka Banner Bold Italic" size="21.0" />
                      </font>
                   </Label>
+                  <Label fx:id="Label" layoutX="1.0" layoutY="235.0" prefHeight="36.0" prefWidth="700.0" textFill="RED" />
                </children></AnchorPane>
             <Label layoutX="216.0" layoutY="6.0" prefHeight="89.0" prefWidth="242.0" text="Молочная Ферма" textFill="#ebebeb">
                <font>

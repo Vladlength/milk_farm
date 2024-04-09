@@ -23,7 +23,7 @@ public class Options {
         return volume;
     }
 
-    public void setVolume(String volume) {
+    public void setVolume(double volume) {
         this.volume = Double.valueOf(volume);
     }
 
@@ -36,7 +36,7 @@ public class Options {
     }
 
     public Double getAnimal_num() {
-        return animal_num;
+        return Double.valueOf(animal_num);
     }
 
     public void setAnimal_num(Double animal_num) {
