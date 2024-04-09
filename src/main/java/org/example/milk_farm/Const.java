@@ -7,6 +7,12 @@ public class Const {
     public static final String OPT_NUM = "animal_num";
     public static final String OPT_PERS = "personalNumber";
     public static final String OPT_DATE = "date";
+//=============================================================
+
+    public static final String ORD_TABLE = "orders";
+    public static final String ORD_VOLUME = "volume";
+    public static final String ORD_KIND = "animal_kind";
+    public static final String ORD_DATE = "date";
 
 }
 

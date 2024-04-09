@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="775.0" prefWidth="740.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.milk_farm.ViewOrdersController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <AnchorPane prefHeight="717.0" prefWidth="700.0" style="-fx-background-color: #2E8B57;">
+            <children>
+                <AnchorPane layoutY="70.0" prefHeight="313.0" prefWidth="700.0" style="-fx-background-color: #F0FFFF;">
+                    <children>
+                        <Label fx:id="Label1" layoutX="60.0" prefHeight="624.0" prefWidth="182.0" textAlignment="CENTER">
+                            <font>
+                                <Font size="14.0" />
+                            </font></Label>
+                        <Label fx:id="Label2" layoutX="257.0" prefHeight="625.0" prefWidth="182.0" textAlignment="CENTER">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="Label3" layoutX="460.0" layoutY="-1.0" prefHeight="625.0" prefWidth="176.0" textAlignment="CENTER">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children></AnchorPane>
+                <Label layoutX="216.0" layoutY="6.0" prefHeight="89.0" prefWidth="242.0" text="Молочная Ферма" textFill="#ebebeb">
+                    <font>
+                        <Font name="Sitka Banner Bold Italic" size="32.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

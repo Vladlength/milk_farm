@@ -21,11 +21,16 @@
                                 <Font name="Sitka Banner Bold Italic" size="25.0" />
                             </font>
                         </Button>
-                        <Button fx:id="Order" layoutX="400.0" layoutY="115.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="211.0" style="-fx-background-color: LightSkyBlue;" text="Заказ" textFill="WHITE">
+                        <Button fx:id="Order" layoutX="400.0" layoutY="115.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="211.0" style="-fx-background-color: LightSkyBlue;" text="Создание Заказа" textFill="WHITE">
                             <font>
                                 <Font name="Sitka Banner Bold Italic" size="25.0" />
                             </font>
                         </Button>
+                  <Button fx:id="ViewingOrders" layoutX="245.0" layoutY="213.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="211.0" style="-fx-background-color: LightSkyBlue;" text="Заказы" textFill="WHITE">
+                     <font>
+                        <Font name="Sitka Banner Bold Italic" size="25.0" />
+                     </font>
+                  </Button>
                     </children></AnchorPane>
                 <Label layoutX="216.0" layoutY="6.0" prefHeight="89.0" prefWidth="242.0" text="Молочная Ферма" textFill="#ebebeb">
                     <font>

@@ -3,6 +3,7 @@ package org.example.milk_farm;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class MilkmadeController {
+public class OrderController {
 
     @FXML
     private ResourceBundle resources;
@@ -28,9 +29,6 @@ public class MilkmadeController {
     private Label Label;
 
     @FXML
-    private TextField animal_num;
-
-    @FXML
     private CheckBox cow;
 
     @FXML
@@ -40,11 +38,7 @@ public class MilkmadeController {
     private CheckBox goat;
 
     @FXML
-    private TextField pers_num;
-
-    @FXML
     private TextField volume;
-
 
     @FXML
     void initialize() {
@@ -55,11 +49,11 @@ public class MilkmadeController {
 
             DatabaseHandler dbHandler = new DatabaseHandler();
 
-            Options options = new Options();
+            Orders orders = new Orders();
 
             try {
                 double animalVol = Double.parseDouble(volume.getText().trim());
-                options.setVolume(animalVol);
+                orders.setVolume(animalVol);
             } catch (NumberFormatException e) {
                 // Обработка некорректного ввода для поля animal_vol
                 Label.setText("Ошибка: Некорректное значение для animal_vol");
@@ -71,35 +65,18 @@ public class MilkmadeController {
                 animal_kind = "goat";
             } else if (cow.isSelected()) {
                 animal_kind = "cow";
-            }else {
+            } else {
                 Label.setText("Ошибка: Не выбран вид животного");
                 return;
             }
-            System.out.println(animal_kind);
 
-            options.setAnimal_kind(animal_kind);
+            orders.setAnimal_kind(animal_kind);
 
-            try {
-                double animalNum = Double.parseDouble(animal_num.getText().trim());
-                options.setAnimal_num(animalNum);
-            } catch (NumberFormatException e) {
-                // Обработка некорректного ввода для поля animal_num
-                Label.setText("Ошибка: Некорректное значение для animal_num");
-                return;
-            }
 
-            try {
-                int personalNumber = Integer.parseInt(pers_num.getText().trim());
-                options.setPersonalNumber(personalNumber);
-            } catch (NumberFormatException e) {
-                // Обработка некорректного ввода для поля pers_num
-                Label.setText("Ошибка: Некорректное значение для pers_num");
-                return;
-            }
 
-            options.setDate(date.getText().trim());
+            orders.setDate(date.getText().trim());
 
-            dbHandler.SendOptions(options);
+            dbHandler.SendOrders(orders);
 
             // Закрываем текущее окно
             Stage currentStage = (Stage) EnterButton.getScene().getWindow();
@@ -117,8 +94,8 @@ public class MilkmadeController {
                 e.printStackTrace();
             }
         });
+
     }
+
 }
-
-
 

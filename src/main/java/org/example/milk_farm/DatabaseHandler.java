@@ -50,28 +50,30 @@ public class DatabaseHandler extends Configs {
 
     }
 
-//    public ResultSet getUser(Options user) {
-//        ResultSet resSet = null;
-//
-//        String select = "SELECT * FROM " + Const.USER_TABLE +
-//                "WHERE " + Const.USERS_PERS_NUM + "=? AND " +
-//                Const.USERS_PASSWORD + "=?";
-//
-//        try {
-//            PreparedStatement prSt = getDbConnection().prepareStatement(select);
-//            prSt.setInt(1, user.getPersonalNumber());
-//            prSt.setString(2, user.getPassword());
-//
-//            resSet = prSt.executeQuery();
-//
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        } catch (ClassNotFoundException e) {
-//            throw new RuntimeException(e);
-//
-//        }
-//        return resSet;
-//    }
+    public void SendOrders(Orders orders) {
+        String insert = "INSERT INTO " + Const.ORD_TABLE + "(" +
+                Const.ORD_VOLUME + "," + Const.ORD_KIND + "," +
+                Const.OPT_DATE + ")" +
+                "VALUES(?,?,?)";
+
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
+            prSt.setDouble(1, orders.getVolume());
+            prSt.setString(2, orders.getAnimal_kind());
+            prSt.setString(3, orders.getDate());
+
+            prSt.executeUpdate();
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 }
 
 

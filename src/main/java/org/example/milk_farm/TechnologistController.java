@@ -25,6 +25,9 @@ public class TechnologistController {
     private Button Viewing;
 
     @FXML
+    private Button ViewingOrders;
+
+    @FXML
     void initialize() {
         Viewing.setOnAction(event -> {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("viewing.fxml"));
@@ -32,6 +35,32 @@ public class TechnologistController {
                 Parent root = loader.load();
                 Stage newStage = new Stage();
                 newStage.setTitle("Сдачи");
+                newStage.setScene(new Scene(root));
+                newStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Order.setOnAction(event -> {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("order.fxml"));
+            try {
+                Parent root = loader.load();
+                Stage newStage = new Stage();
+                newStage.setTitle("Создание");
+                newStage.setScene(new Scene(root));
+                newStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        ViewingOrders.setOnAction(event -> {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewing_orders.fxml"));
+            try {
+                Parent root = loader.load();
+                Stage newStage = new Stage();
+                newStage.setTitle("Заказы");
                 newStage.setScene(new Scene(root));
                 newStage.show();
             } catch (IOException e) {
